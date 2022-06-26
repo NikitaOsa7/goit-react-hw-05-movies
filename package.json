@@ -10,8 +10,10 @@
     "react": "^18.2.0",
     "react-browser-router": "^2.1.2",
     "react-dom": "^18.2.0",
+    "react-lazy": "^1.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-suspense": "^0.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
