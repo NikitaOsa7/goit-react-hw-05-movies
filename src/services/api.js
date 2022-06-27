@@ -1,7 +1,7 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-axios.defealt.baseURL = 'https://api.themoviedb.org/3';
+axios.default.baseURL = 'https://api.themoviedb.org/3';
 
 
 export const getTrendingMovies = async () => {
