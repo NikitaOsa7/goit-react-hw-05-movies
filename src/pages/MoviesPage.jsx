@@ -14,6 +14,7 @@ export default function MoviesPage() {
     useEffect(() => {
         search && searchParams.set('query', search);
         search && onSearchClick(search);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {

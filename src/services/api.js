@@ -1,11 +1,11 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-axios.default.baseURL = 'https://api.themoviedb.org/3';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
 
 export const getTrendingMovies = async () => {
-    const response = axios.get('/trending/movie/day?api_key=be86064d3c6e1b3236c92193870a2f7c');
+    const response = await axios.get('/trending/movie/day?api_key=be86064d3c6e1b3236c92193870a2f7c');
     return response.data;
 };
 
