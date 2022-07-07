@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
 import api from "services/api";
 import MovieList from "components/MoviesList/MoviesList";
 
@@ -10,8 +10,8 @@ export default function HomePage() {
         api.getTrendingMovies().then(data => {
             data.results.map(({ id, title }) =>
                 setMovies(m => [...m, { id, title }])
-            );
-        })
+            )
+        });
     }, []);
 
     return (

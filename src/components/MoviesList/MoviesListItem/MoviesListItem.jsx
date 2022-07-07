@@ -2,6 +2,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function MovieListItem({ title, id }) {
+    
     const [searchParams, _setSearchParams] = useSearchParams();
 
     return (
