@@ -16,10 +16,12 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
+
   &.active {
     composes: link;
     color: brown;
   }
+
     &:hover {
   text-decoration: underline;
 `;

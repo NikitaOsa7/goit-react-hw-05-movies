@@ -1,27 +1,27 @@
-import { useState } from 'react';
 import { useEffect } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from 'services/api';
 import s from './Cast.module.css';
 
 export default function Cast() {
-    const [cast, setCast] = useState([]);
-    const { movieId } = useParams();
+  const [cast, setCast] = useState([]);
+  const { movieId } = useParams();
 
-    useEffect(() => {
-        try {
-            const response = api.fetchCast(movieId);
-            response.then(data => {
-                data.data.cast.map(({ name, character, profile_path }) =>
-                    setCast(c => [...c, { name, character, profile_path }])
-                );
-            });
-        } catch (error) { }
-    }, [movieId]);
+  useEffect(() => {
+    try {
+      const response = api.fetchCast(movieId);
+      response.then(data => {
+        data.data.cast.map(({ name, character, profile_path }) =>
+          setCast(c => [...c, { name, character, profile_path }])
+        );
+      });
+    } catch (error) {}
+  }, [movieId]);
 
-return (
+  return (
     <ul>
-      {cast.map(({ profile_path, name, character }, index) => {
+      {cast.map(({ name, profile_path, character }, index) => {
         return (
           <li key={index}>
             {profile_path && (
