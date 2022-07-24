@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import api from 'services/api';
-import AdditionalInformation from 'components/AdditionalInformation/AdditionalInformation';
+import AdditionalInformation from 'components/AdditionalInfo/AdditionalInfo';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import s from './MovieDetailsPage.module.css';
 import { useEffect } from 'react';

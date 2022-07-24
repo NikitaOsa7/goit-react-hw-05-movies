@@ -1,7 +1,7 @@
 import { useParams, Link, Outlet } from 'react-router-dom';
-import s from './AdditionalInformation.module.css';
+import s from './AdditionalInfo.module.css';
 
-export default function AdditionalInformation() {
+export default function AdditionalInfo() {
   const { movieId } = useParams();
   const NAVIGATION = ['Cast', 'Reviews'];
 

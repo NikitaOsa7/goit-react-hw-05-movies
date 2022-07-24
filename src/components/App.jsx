@@ -1,8 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
-import Cast from './AdditionalInformation/Cast/Cast';
-import Review from './AdditionalInformation/Review/Review';
+import Cast from './AdditionalInfo/Cast/Cast';
+import Review from './AdditionalInfo/Review/Review';
 
 const HomePage = lazy(() =>
   import('../pages/HomePage' /* webpackChunkName: "HomePage" */)

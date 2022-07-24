@@ -21,7 +21,7 @@ export default function Cast() {
 
   return (
     <ul>
-      {cast.map(({ name, profile_path, character }, index) => {
+      {cast.map(({ profile_path, name, character }, index) => {
         return (
           <li key={index}>
             {profile_path && (

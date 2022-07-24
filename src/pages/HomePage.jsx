@@ -6,12 +6,8 @@ export default function HomePage() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    api.getTrendingMovies().then(data => {
-      data.results.map(({ id, title }) =>
-        setMovies(m => [...m, { id, title }])
-      );
-    });
-  }, []);
+    api.getTrendingMovies().then(data => setMovies(data.results))
+  }, [])
 
   return (
     <main>
