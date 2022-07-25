@@ -4,17 +4,16 @@ import { Layout } from './Layout';
 import Cast from './AdditionalInfo/Cast/Cast';
 import Review from './AdditionalInfo/Review/Review';
 
-const HomePage = lazy(() =>
-  import('../pages/HomePage' /* webpackChunkName: "HomePage" */)
-);
+const slicer = componentName => {
+  return lazy(() =>
+    import(`../pages/${componentName}`));
+}
 
-const MoviesPage = lazy(() =>
-  import('../pages/MoviesPage' /* webpackChunkName: "MoviesPage" */)
-);
+const HomePage = slicer('HomePage');
+const MoviesPage = slicer('MoviesPage');
+const MovieDetailsPage = slicer('MovieDetailsPage');
 
-const MovieDetailsPage = lazy(() =>
-  import('../pages/MovieDetailsPage' /* webpackChunkName: "MovieDetailsPage" */)
-);
+
 
 export const App = () => {
   return (
