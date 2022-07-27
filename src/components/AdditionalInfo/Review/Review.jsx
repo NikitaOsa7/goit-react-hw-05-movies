@@ -3,17 +3,17 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from 'services/api';
 
-export default function Reviews() {
-  const [review, setReviews] = useState([]);
+export default function Review() {
+  const [review, setReview] = useState([]);
   const { movieId } = useParams();
   const [reviewStatus, setReviewStatus] = useState(true);
 
   useEffect(() => {
     try {
-      const response = api.fetchReviews(movieId);
+      const response = api.fetchReview(movieId);
       response.then(data => {
         data.data.results.map(({ author, content }) =>
-          setReviews(r => [...r, { author, content }])
+          setReview(r => [...r, { author, content }])
         );
         data.data.results.length === 0
           ? setReviewStatus(false)
