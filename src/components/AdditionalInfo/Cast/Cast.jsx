@@ -11,11 +11,15 @@ export default function Cast() {
   useEffect(() => {
     try {
       const response = api.fetchCast(movieId);
-      response.then(data => {
-        data.data.cast.map(({ name, character, profile_path }) =>
-          setCast(c => [...c, { name, character, profile_path }])
-        );
-      });
+      response.then(newData => {
+        setCast(
+          newData.data.cast.map(({ id, character, name, profile_path }) => ({
+            id,
+            character, 
+            profile_path,
+          }))
+        )
+      })
     } catch (error) {}
   }, [movieId]);
 

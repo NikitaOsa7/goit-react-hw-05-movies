@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 
 export default function MoviesList({ movies }) {
   return (
-    <>
-      <ul>
-        {movies.map(({ id, title }) => (
-          <MovieListItem key={id} title={title} id={id} />
-        ))}
-      </ul>
-    </>
-  );
+    <ul>
+      {movies.map(({ id, title }) => (
+        <MovieListItem id={id} title={title} key={id}/>
+      ))}
+    </ul>
+  )
 }
 
 MoviesList.propTypes = {

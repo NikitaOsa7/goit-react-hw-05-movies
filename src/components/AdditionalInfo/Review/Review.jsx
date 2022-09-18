@@ -11,11 +11,18 @@ export default function Review() {
   useEffect(() => {
     try {
       const response = api.fetchReview(movieId);
-      response.then(data => {
-        data.data.results.map(({ author, content }) =>
-          setReview(r => [...r, { author, content }])
-        );
-        data.data.results.length === 0
+      response.then(newData => {
+        setReview(
+          newData.data.results.map(
+            ({ id, author, author_details, content }) => ({
+              id,
+              author,
+              author_details,
+              content
+            })
+          )
+        )
+        newData.data.results.length === 0
           ? setReviewStatus(false)
           : setReviewStatus(true);
       });
